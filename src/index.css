@@ -1,0 +1,283 @@
+@font-face {
+  font-family: "Quicksand";
+  src: url("./Fonts/Quicksand.ttf") format("truetype");
+  font-weight: 300 400 500 600;
+}
+
+:root {
+  --primary-color: #1f2226;
+  --secondary-color: #ea4d88;
+  --text-color: #ffffff;
+  --destructive-color: #a30d0d;
+  --background-light: #f4f4f4;
+  --font-family: "Quicksand", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  font-family: var(--font-family);
+}
+
+#root {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100dvw;
+  min-height: 100dvh;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+}
+
+.login-card {
+  max-width: 20rem;
+}
+
+.login-card__title {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.button {
+  background-color: var(--secondary-color);
+  color: inherit;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.825rem;
+  font-weight: 300;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  outline: none;
+  border: none;
+  height: 2.4rem;
+}
+
+.button:hover {
+  background-color: #ea4d8898;
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form__error {
+  background-color: var(--destructive-color);
+  font-size: 0.875rem;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.field {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.field__label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 0.25rem;
+}
+
+.field__icon {
+  aspect-ratio: 1;
+  height: 2.4rem;
+  display: grid;
+  place-items: center;
+  background-color: #27292e;
+  font-size: 1.25rem;
+}
+
+.field__message {
+  font-size: 0.875rem;
+  color: var(--destructive-color);
+  font-weight: 300;
+}
+
+.input {
+  width: 100%;
+  outline: none;
+  border: none;
+  background: none;
+  color: inherit;
+  font-size: 0.875em;
+  font-weight: inherit;
+  padding: 0 0.75rem;
+  background-color: #2f3238;
+  height: 2.4rem;
+  border-radius: 0.25rem;
+}
+
+.field .input {
+  border-radius: 0;
+}
+
+.input:-webkit-autofill,
+.input:-webkit-autofill:hover,
+.input:-webkit-autofill:focus,
+.input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: var(--text-color) !important;
+}
+
+.profile-card {
+  background-color: var(--background-light);
+  border-radius: 0.5rem;
+  color: var(--primary-color);
+  padding: 2rem 2.5rem;
+  max-width: 28rem;
+}
+
+.profile-card__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.profile-card__name {
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+
+.profile-card__email {
+  font-size: 0.925rem;
+  font-weight: 400;
+}
+
+.profile-card__location {
+  font-size: 0.925rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.profile-card__location-icon {
+  font-size: 1.2rem;
+}
+
+.profile-card__details-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 0.5rem;
+}
+
+.profile-card__details-list-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.profile-card__details-list-item dd {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.profile-card__details-list-item dt {
+  font-size: 0.825rem;
+}
+
+.logout-button {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  color: var(--destructive-color);
+  font-size: 0.825rem;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+.profile-card__image-container {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 4rem;
+}
+
+.profile-card__image {
+  width: 8rem;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 0.35rem solid var(--secondary-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  position: absolute;
+  background-color: var(--background-light);
+  bottom: 2rem;
+}
+
+.profile-card__work {
+  background: var(--background-light);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 1rem;
+}
+
+.profile-card__work h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.profile-card__work-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.profile-card__work-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.profile-card__work-item dt {
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 0.25rem;
+}
+
+.profile-card__work-item dd {
+  font-size: 0.925rem;
+  font-weight: 500;
+  color: var(--primary-color-dark);
+}
